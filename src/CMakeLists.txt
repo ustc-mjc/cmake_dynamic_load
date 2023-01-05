@@ -1,0 +1,6 @@
+add_executable(main main.cc)
+target_link_libraries(main ${CMAKE_DL_LIBS})
+set_target_properties(main PROPERTIES BUILD_RPATH "$ORIGIN")
+set_target_properties(main PROPERTIES INSTALL_RPATH "$ORIGIN")
+add_library(calculate MODULE calculate.cc)
+use_compile_define(main)
